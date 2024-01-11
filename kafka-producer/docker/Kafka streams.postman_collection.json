@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "498bf689-1c78-4e01-8845-0ea7369cf93d",
+		"name": "Kafka streams",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2979860",
+		"_collection_link": "https://interstellar-flare-929705.postman.co/workspace/AIB~e9ddb406-4601-475b-a30c-29f4d7d2cbce/collection/2979860-498bf689-1c78-4e01-8845-0ea7369cf93d?action=share&source=collection_link&creator=2979860"
+	},
+	"item": [
+		{
+			"name": "post message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get message",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/count/hhhh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"count",
+						"hhhh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actuator",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/count/hhhh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"count",
+						"hhhh"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

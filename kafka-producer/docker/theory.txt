@@ -1,0 +1,18 @@
+https://www.baeldung.com/spring-boot-kafka-streams
+
+Kafka Streams provides a duality between Kafka topics and relational database tables. It enables us to do operations like joins, grouping, aggregation, and filtering of one or more streaming events.
+Kafka Streams provides a duality between Kafka topics and relational database tables. It enables us to do operations like joins, grouping, aggregation, and filtering of one or more streaming events.
+
+An important concept of Kafka Streams is that of processor topology. Processor topology is the blueprint of Kafka Stream operations on one or more event streams. Essentially, the processor topology can be considered as a directed acyclic graph. In this graph, nodes are categorized into source, processor, and sink nodes, whereas the edges represent the flow of the stream events.
+
+The source at the top of the topology receives streaming data from Kafka, passes it down to the processor nodes where custom operations are performed, and flows out through the sink nodes to a new Kafka topic. Alongside the core processing, the state of the stream is saved periodically using checkpoints for fault tolerance and resilience.
+
+Topology
+Here, we’ve defined a configuration method and annotated it with @Autowired. Spring processes this annotation and wires a matching bean from the container into the StreamsBuilder argument. Alternately, we can also create a bean in the configuration class to generate the topology.
+
+StreamsBuilder gives us access to all of the Kafka Streams APIs, and it becomes like a regular Kafka Streams application. In our example, we’ve used this high-level DSL to define the transformations for our application:
+
+Create a KStream from the input topic using the specified key and value SerDes.
+Create a KTable by transforming, splitting, grouping, and then counting the data.
+Materialize the result to an output stream.
+In essence, Spring Boot provides a very thin wrapper around Streams API while managing the lifecycle of our KStream instance. It creates and configures the required components for the topology and executes our Streams application. Importantly, this lets us focus on our core business logic while Spring manages the lifecycle.
